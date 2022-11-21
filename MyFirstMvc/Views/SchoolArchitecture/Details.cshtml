@@ -1,0 +1,56 @@
+﻿@model MyFirstMvc.Models.school
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+    <h4>SCHOOL</h4>
+    <table>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Studentname)
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.Studentname)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.location)
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.location)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.mobile)
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.mobile)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Gender)
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.Gender)
+            </td>
+        </tr>
+    </table>    
+
+        
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Sid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

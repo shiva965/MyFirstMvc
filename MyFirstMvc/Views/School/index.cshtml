@@ -1,0 +1,71 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<MyFirstMvc.Models.school>
+
+@{
+    ViewBag.Title = "Index";
+   // ViewBag.name = "School list";
+}
+
+@*<h2>index</h2>*@
+<h3>@ViewBag.Title</h3>
+@*@ViewBag.name*@
+@Html.ActionLink("create", "Create")
+@*<h4>@ViewBag.scl</h4>*@
+
+<ul>
+    @*@foreach(var ss in ViewData["school"] as IList<school>)
+    {
+                <li>
+                    @ss
+                </li>
+            }*@
+</ul>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Sid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Studentname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Gender)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelitem => item.Sid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Studentname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Gender)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Sid }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Sid }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Sid })
+            </td>
+
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }));
+

@@ -1,0 +1,72 @@
+﻿@model MyFirstMvc.Models.school
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<h4>School</h4>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<table class="table">
+    <tr>
+        <td>
+            @Html.LabelFor(model => model.Sid)
+        </td>
+        <td>
+            @Html.TextBoxFor(model => model.Sid)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.Studentname)
+        </td>
+
+        <td>
+            @Html.DisplayFor(model => model.Studentname)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.location)
+        </td>
+
+        <td>
+            @Html.DisplayFor(model => model.location)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.mobile)
+        </td>
+
+        <td>
+            @Html.DisplayFor(model => model.mobile)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.Gender)
+        </td>
+
+        <td>
+            @Html.DisplayFor(model => model.Gender)
+        </td>
+    </tr>
+
+</table>
+
+
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+}
+
+
